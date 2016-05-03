@@ -9,12 +9,22 @@
         <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/javacourse</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">postgres</property>
-        <property name="default_schema">region</property>
+        <property name="default_schema">public</property>
+        <!--пул соединеней, мб внешние, в частности аппл AS-->
         <property name="connection.pool_size">1</property>
+        <!--для какой бд надо писать скл-запросы-->
         <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <!--когда спрашиваем ссесию-->
+        <!--как и когда её создавать-->
+        <!--ссесия на поток-->
         <property name="current_session_context_class">thread</property>
+        <!--на основе мэппинга Х-т может создавть таблицы
+        если есть в субд таблица, но нет всех нужных полей, Х-т добавит поля
+        create - создать заново
+        не используется на проде-->
         <property name="hbm2ddl.auto">update</property>
 
+        <!--так как у нас мэппинг на аннотациях-->
         <mapping class="edu.javacourse.hibernate.Region"/>
     </session-factory>
 

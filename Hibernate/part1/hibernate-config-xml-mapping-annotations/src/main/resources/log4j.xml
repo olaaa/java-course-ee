@@ -16,12 +16,12 @@
         <priority value="trace"/>
         <appender-ref ref="consoleLog"/>
     </category>
-
+	<!--запросы в виде скл-->
     <category name="org.hibernate.SQL">
         <priority value="debug"/>
         <appender-ref ref="consoleLog"/>
     </category>
-
+<!--показываются значения, которые вставляются вместо запросов-->
     <category name="org.hibernate.type">
         <priority value="trace"/>
         <appender-ref ref="consoleLog"/>

@@ -5,11 +5,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.js"></script>
+        селектор - это конструкция, которая выбирает по каким-то критериям: по имени класса, по id, по количеству, покачеству
+        чаще всего выбирают по цсс-классам
         <script type="text/javascript">
             $(function(){
+//                по имени тэга
                 alert('кол-во параграфов: ' + $('p').size());
                 alert('общее кол-во элементов c классом some-class: ' + $('.some-class').size());
                 alert('кол-во параграфов c классом some-class: ' + $('p.some-class').size());
+//                к классу обращение через . , к id через #
                 alert('содержание элемента с id=some-id: ' + $('#some-id').text());
                 alert('фильтры: первый элемент: ' + $('p:first').text());
                 alert('фильтры: последний элемент: ' + $('p:last').text());

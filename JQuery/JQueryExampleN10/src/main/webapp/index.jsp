@@ -9,12 +9,19 @@
     <script type="text/javascript">
         $(function () {
             $('#button').click(function () {
-                $.get("MyServlet", {
-                    "summand1": $('#field1').val(),
-                    "summand2": $('#field2').val()
-                }, function (data) {
-                    $('#response').text('Returned value from server: ' + data);
-                });
+                // ajax!
+                $.get(
+                        "MyServlet"
+                        // указываем параметры(как в гет запросе, только объектом)
+                        , {
+                            "summand1": $('#field1').val(),
+                            "summand2": $('#field2').val()
+                        }
+                        // колбэк, когда придёт респонс
+                        , function (data) {
+                            $('#response').text('Returned value from server: ' + data);
+                        }
+                );
             });
         });
     </script>

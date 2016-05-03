@@ -24,7 +24,8 @@ public class AjaxController {
     }
 
     @RequestMapping(value = "/plus", method = RequestMethod.GET)
-    public @ResponseBody String plus(@RequestParam String d1, @RequestParam String d2, HttpServletResponse response) {
+    @ResponseBody // возвращаемое значение будет записываться в респонс
+    public String plus(@RequestParam String d1, @RequestParam String d2, HttpServletResponse response) {
         try {
             return String.valueOf(Integer.parseInt(d1) + Integer.parseInt(d2));
         } catch (Exception e) {

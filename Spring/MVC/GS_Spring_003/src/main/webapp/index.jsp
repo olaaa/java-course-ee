@@ -8,6 +8,7 @@
 
             $("#helloLink").click(function() {
                 $.ajax({
+                    // по дефолту пост-запрос!
                     "url": "helloajax",
                     "timeout": 2000,
                     "success": function (data, textStatus, jqXHR) {

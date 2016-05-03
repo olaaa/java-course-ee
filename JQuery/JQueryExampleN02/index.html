@@ -31,15 +31,15 @@
                     $(this).hide();
                 });
 				
-                $('#q2').click(function(){
-                    $(this).hide(3000);
-                });
+//                $('#q2').click(function(){
+//                    $(this).hide(3000);
+//                });
                 
-                //                 $('#q2').click(function(){
-                //                    $(this).hide(3000, function(){
-                //                         $(this).show();
-                //                    });
-                //                });
+                                 $('#q2').click(function(){
+                                    $(this).hide(3000, function(){
+                                         $(this).show();
+                                    });
+                                });
 				
                 $('#q3').click(function(){
                     $(this).fadeOut();
@@ -57,13 +57,13 @@
                     $('#div1').slideToggle();
                 });
 				
-                //                $('#div1').mouseover(function(){
-                //                    $(this).css('background-color', 'blue');
-                //                });
-                //				
-                //                $('#div1').mouseout(function(){
-                //                    $(this).css('background-color', 'aquamarine');
-                //                });
+                                $('#div1').mouseover(function(){
+                                    $(this).css('background-color', 'blue');
+                                });
+
+                                $('#div1').mouseout(function(){
+                                    $(this).css('background-color', 'aquamarine');
+                                });
 				
 //                				$('#div1').hover(function(){
 //                					$(this).css('background-color', 'blue');
@@ -71,17 +71,17 @@
 //                					$(this).css('background-color', 'aquamarine');
 //                				});
 				
-                				$('#div1').hover(function(){
-                					$(this).toggleClass('aqua-blue');
-                				});
+//                				$('#div1').hover(function(){
+//                					$(this).toggleClass('aqua-blue');
+//                				});
             })
         </script>
     </head>
     <body>
-        <div id="q1" class="quiart">click me to hide</div>
-        <div id="q2" class="quiart">click me to hide slowly</div>
-        <div id="q3" class="quiart">click me to fadeout</div>
-        <div id="q4" class="quiart">click me to fadeout slowly</div>
+        <div id="q1" class="quiart">"q1" click me to hide</div>
+        <div id="q2" class="quiart">"q2" click me to hide slowly</div>
+        <div id="q3" class="quiart">"q3" click me to fadeout</div>
+        <div id="q4" class="quiart">"q4" click me to fadeout slowly</div>
 
         <br>
         <br>

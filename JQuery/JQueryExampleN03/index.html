@@ -17,16 +17,24 @@
         .even-aliceblue {
             background-color: aliceblue;
         }
+
+        .coral {
+            background-color: coral;
+        }
+
     </style>
     <script type="text/javascript">
         $(function () {
             $('#table1').css('background-color', 'aliceblue');
+            // все нечётные строчки
             $('table tr:odd').css('background-color', 'aliceblue');
-            $('table:first tr:even').css('background-color', 'aliceblue');
-            $('table tbody tr:even').addClass('even-aliceblue');
+//            table:first первая таблица
+            // будет иметь больший приоритет, чем addClass строчкой ниже
+            $('table:first tr:even').css('background-color', 'red');
+            $('table tbody tr:odd').addClass('coral');
 
             $('#button').click(function () {
-                alert('first tr of first table has background color: ' + $('table:first tbody tr:first').css('background-color'));
+                alert('first tr of first table has background color: ' + $('table:first tbody tr:first').css('background-color', 'blue'));
             });
         })
     </script>

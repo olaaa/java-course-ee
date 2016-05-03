@@ -11,7 +11,7 @@
             $('#button').click(function () {
                 $.ajax({
                     "url": "GetRandom",
-                    "timeout": 2000,
+                    "timeout": 3500,
                     "beforeSend": function () {
                         $('#info').text("Requesting new random value...");
                     },

@@ -10,37 +10,37 @@
 		</style>
 		<script type="text/javascript">
 			$(function(){
-//				$('#add').click(function(){
-//					child = $('<p>This is a text of paragraph</p>');
-//					$('#container').append(child);
-//				});
-//				
-//				$('#add').click(function(){
-//					child = $('<p>This is a text of paragraph</p>').hide();
-//					$('#container').append(child);
-//					child.fadeIn(200);
-//				});
-//				
-//				$('#add').click(function(){
-//					child = $('<p>This is a text of paragraph</p>').hide();
-//					$('#container').append(child);
-//					child.fadeIn(3000, function(){
-//						var currCount = $('#count').text();
-//						currCount++;
-//						$('#count').text(currCount);
-//					});
-//				});
-//				
-				$('#add').click(function(){
+				$('#add1').click(function(){
+					child = $('<p>This is a text of paragraph</p>'); // инлайн создаём html элемент
+					$('#container').append(child); // и добавляем
+				});
+
+				$('#add2').click(function(){
 					child = $('<p>This is a text of paragraph</p>').hide();
 					$('#container').append(child);
-					child.fadeIn(200, function(){
+					child.fadeIn(200); // плавно
+				});
+
+				$('#add3').click(function(){
+					child = $('<p>This is a text of paragraph</p>').hide();
+					$('#container').append(child);
+					child.fadeIn(3000, function(){
+						var currCount = $('#count').text();
+						currCount++;
+						$('#count').text(currCount);
+					});
+				});
+
+				$('#add4').click(function(){
+					child = $('<p>This is a text of paragraph</p>').hide();
+					$('#container').append(child);
+					child.fadeIn(2000, function(){
 						var count = $('#count');
 						var currCount = count.text();
 						currCount++;
-						count.fadeOut(200, function(){
+						count.fadeOut(2000, function(){ // временно пропадает
 							count.text(currCount);
-							count.fadeIn(200);
+							count.fadeIn(2000); // и появляется
 						});
 					});
 				});
@@ -48,7 +48,10 @@
 		</script>
     </head>
     <body>
-		<button id="add">add a paragraph</button>
+		<button id="add1">add a paragraph </button>
+		<button id="add2">add a paragraph count.fadeIn плавно</button>
+		<button id="add3">add a paragraph счётчик плавно</button>
+		<button id="add4">add a paragraph появляется исчехает и появляется</button>
 		Добавлено <span id="count">0</span> параграфов
 		<div id="container">
 			

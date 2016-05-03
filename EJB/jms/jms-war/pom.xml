@@ -13,7 +13,7 @@
     </parent>
 
     <groupId>edu.javacourse.ejb.jms</groupId>
-    <artifactId>jms-war</artifactId>
+    <artifactId>jms-war11111111111</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -23,6 +23,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
+	        <version>7.0</version>
         </dependency>
 
         <dependency>
@@ -30,6 +31,12 @@
             <artifactId>slf4j-api</artifactId>
             <scope>provided</scope>
         </dependency>
+	    <dependency>
+		    <groupId>edu.javacourse.ejb.jms</groupId>
+		    <artifactId>jms-ejb</artifactId>
+		    <version>1.0-SNAPSHOT</version>
+	    </dependency>
+
 
     </dependencies>
 

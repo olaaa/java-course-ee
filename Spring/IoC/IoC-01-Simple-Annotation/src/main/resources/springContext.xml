@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="currentDate" class="java.util.Date"/>
+
+	<!--используются констукторы по умолчанию и используются потом сеттеры!!-->
+	<!--Returning cached instance of singleton bean-->
+    <bean id="person1" class="edu.javacourse.spring.ioc.beans.Person">
+        <property name="id" value="1"/>
+        <property name="name" value="Vasiliy"/>
+        <property name="birth" ref="currentDate"/>
+    </bean>
+    <bean id="person2" class="edu.javacourse.spring.ioc.beans.Person">
+        <property name="id" value="1"/>
+        <property name="name" value="Vasiliy"/>
+        <property name="birth" ref="currentDate"/>
+    </bean>
+
+	<!--не устанавливаем Person -->
+    <bean id="car" class="edu.javacourse.spring.ioc.beans.Car">
+        <property name="id" value="1"/>
+        <property name="model" value="Kalina"/>
+        <property name="year" value="2010"/>
+        <property name="lastService" ref="currentDate"/>
+    </bean>
+
+	<context:annotation-config/>
+	<!-- Инициализация через аннотации - надо указать пакет -->
+	<context:component-scan base-package="edu.javacourse.spring.ioc.beans"/>
+
+</beans>

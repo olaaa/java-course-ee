@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+/**
+ * настройки с помощью кода!
+ */
 @Configuration
 @Import(CoreConfig.class)
 public class ApplicationConfig {

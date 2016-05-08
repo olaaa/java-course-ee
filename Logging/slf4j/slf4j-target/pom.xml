@@ -22,6 +22,9 @@
             <artifactId>slf4j-source</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+	    <!--МОСТ МЕЖДУ СИСТЕМОЙ ЛОГИРОВАНИЯ БИБИЛОТЕЧКИ И СОБСТВЕННОЙ-->
+	    <!--то есть логи библиотечки, где slf4j, мы печатаем с помощью нашего-->
+	    <!--slf4j есть в вилдфлае, и в проекте можно не делать настройки, а делать на сервере-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>

@@ -3,6 +3,7 @@ package ru.test.logging;
 import org.apache.log4j.Logger;
 
 public class App {
+//    App.class отражение категории
     private static final Logger log = Logger.getLogger(App.class);
 
     public static void main(String[] args) {

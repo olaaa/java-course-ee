@@ -3,6 +3,7 @@
 <log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'
                      debug="true">
 
+	<!--то место, куда будут скидываться логи-->
     <appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
         <param name="maxFileSize" value="1KB"/>
         <param name="maxBackupIndex" value="2"/>
@@ -13,6 +14,7 @@
         </layout>
     </appender>
 
+	<!--категрия - связывает логи и настройки-->
     <category name="ru.test">
         <!--all, trace, debug, info, warn, error, fatal-->
         <priority value="info"/>

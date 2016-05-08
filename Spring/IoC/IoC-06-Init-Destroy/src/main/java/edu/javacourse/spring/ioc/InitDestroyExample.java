@@ -12,6 +12,7 @@ public class InitDestroyExample {
     private static Logger log = LoggerFactory.getLogger(InitDestroyExample.class);
 
     public static void main(String[] args) throws InterruptedException {
+//        ClassPathXmlApplicationContext уточняем тип
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springContext.xml"});
 
         log.debug("\n\n\n");
@@ -19,6 +20,7 @@ public class InitDestroyExample {
         Thread.sleep(5000);
 
         log.debug("Destroying context...");
+//        объект будут жить дальше, просто у них вызовется метод destroy
         context.destroy();
     }
 

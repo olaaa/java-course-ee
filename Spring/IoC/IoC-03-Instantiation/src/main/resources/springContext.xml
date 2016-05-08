@@ -26,10 +26,15 @@
     </bean>
 
     <!--Create bean through static method inside class-->
-    <bean id="person-factory-method" class="edu.javacourse.spring.ioc.beans.Person" factory-method="createInstance"/>
+    <bean id="person-factory-method"
+          class="edu.javacourse.spring.ioc.beans.Person"
+          factory-method="createInstance"/>
 
     <!--Create bean through static method inside class with arguments-->
-    <bean id="person-factory-method-with-arguments" class="edu.javacourse.spring.ioc.beans.Person" factory-method="createInstance">
+    <bean id="person-factory-method-with-arguments"
+          class="edu.javacourse.spring.ioc.beans.Person"
+          factory-method="createInstance"
+    >
         <constructor-arg name="id" value="3"/>
         <constructor-arg name="name" value="Petr"/>
         <constructor-arg name="birth" ref="currentDate"/>

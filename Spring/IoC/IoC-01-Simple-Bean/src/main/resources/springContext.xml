@@ -5,6 +5,8 @@
 
     <bean id="currentDate" class="java.util.Date"/>
 
+	<!--используются констукторы по умолчанию и используются потом сеттеры!!-->
+	<!--Returning cached instance of singleton bean-->
     <bean id="person" class="edu.javacourse.spring.ioc.beans.Person">
         <property name="id" value="1"/>
         <property name="name" value="Vasiliy"/>

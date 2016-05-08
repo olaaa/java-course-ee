@@ -3,9 +3,16 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
        default-lazy-init="false">
+	<!--можно ставить настройку по умолчанию!-->
 
-    <bean id="not-lazy" class="java.util.Date" lazy-init="false"/>
+<!--
+	создаётся после создания
+	ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"springContext.xml"});
+-->
 
+	<bean id="not-lazy" class="java.util.Date" lazy-init="false"/>
+
+	<!--создаётся когда понадобится, когда обратимся, или на него будет ссылаться другой объект-->
     <bean id="lazy" class="java.util.Date" lazy-init="true"/>
 
 </beans>

@@ -5,18 +5,21 @@
 
     <bean id="currentDate" class="java.util.Date"/>
 
+	<!--abstract="true" не разрешаем создавать экземпляры-->
     <bean id="person" abstract="true" class="edu.javacourse.spring.ioc.beans.Person">
         <property name="id" value="1"/>
         <property name="name" value="Vasiliy"/>
         <property name="birth" ref="currentDate"/>
     </bean>
 
+	<!--parent="person"-->
     <bean id="adult" class="edu.javacourse.spring.ioc.beans.Adult" parent="person">
         <property name="paspSer" value="0000"/>
         <property name="paspNum" value="123456"/>
         <property name="snils" value="1234567890"/>
     </bean>
 
+	<!--parent="person"-->
     <bean id="child" class="edu.javacourse.spring.ioc.beans.Child" parent="person">
         <property name="responsible" ref="adult"/>
     </bean>

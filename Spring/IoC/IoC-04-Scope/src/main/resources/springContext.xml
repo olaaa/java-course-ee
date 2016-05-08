@@ -5,6 +5,7 @@
 
     <bean id="no-changing-date" class="java.util.Date" scope="singleton"/>
 
+	<!--prototype каждый раз создаёт новый объект перед получением! при старте контекста бин не создаётся-->
     <bean id="changing-date" class="java.util.Date" scope="prototype"/>
 
 </beans>

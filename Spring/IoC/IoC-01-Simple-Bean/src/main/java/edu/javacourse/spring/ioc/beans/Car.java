@@ -14,6 +14,7 @@ public class Car {
     private Person owner;
 
     public Car() {
+        System.out.println("Default co");
     }
 
     public Car(Long id, String model, int year, Date lastService, Person owner) {

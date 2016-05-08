@@ -13,12 +13,14 @@ public class AnnotationsInitBean {
 
     private static Logger log = LoggerFactory.getLogger(AnnotationsInitBean.class);
 
+//    javax.annotation.PostConstruct;
     @PostConstruct
     public void annotatedInitMethod() {
         log.debug("");
         log.debug("annotatedInitMethod invoked");
     }
 
+//    javax.annotation.PreDestroy;
     @PreDestroy
     public void annotatedDestroyMethod() {
         log.debug("");

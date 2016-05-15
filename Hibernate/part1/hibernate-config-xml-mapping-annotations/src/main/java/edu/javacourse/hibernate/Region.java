@@ -1,11 +1,11 @@
 package edu.javacourse.hibernate;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
+// javax.persistence
 @Entity
 @Table(name = "jc_region")
-public class Region implements Serializable {
+public class Region {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

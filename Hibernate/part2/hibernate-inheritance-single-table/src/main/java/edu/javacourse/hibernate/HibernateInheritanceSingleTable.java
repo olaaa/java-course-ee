@@ -15,6 +15,7 @@ import java.util.List;
  * Author: Georgy Gobozov
  * Date: 23.06.13
  */
+// все данные хранятся в одной таблице, добавляется колонка, с указанием типа payment_type
 public class HibernateInheritanceSingleTable {
 
     private static final Logger log = LoggerFactory.getLogger(HibernateInheritanceSingleTable.class);

@@ -7,6 +7,7 @@ import javax.persistence.*;
 @AttributeOverrides({
         @AttributeOverride(name = "amount", column = @Column(name = "amount"))
 })
+//в бд у таблицы есть amount, чтобы не делать джойны, соответственно, по одному инсерту
 public class CashPayment extends Payment {
 
     @Column(name = "CASH_DESK")

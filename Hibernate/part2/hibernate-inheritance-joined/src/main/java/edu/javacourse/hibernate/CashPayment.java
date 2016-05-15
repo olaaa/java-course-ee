@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "jc_cash_payment")
-@PrimaryKeyJoinColumn(name = "PAYMENT_ID")
+@PrimaryKeyJoinColumn(name = "PAYMENT_ID") // колонка по которой связываться с родительской сущностью (эта колнка из CashPayment)
 public class CashPayment extends Payment {
 
     @Column(name = "CASH_DESK")

@@ -43,7 +43,7 @@ public class HibernateInheritanceJoined {
         payment.setAmount(123.12);
         session.save(payment);
 
-        CashPayment cashPayment = new CashPayment();
+        CashPayment cashPayment = new CashPayment(); // два инсерта в две таблицы
         cashPayment.setAmount(423.1);
         cashPayment.setCashDesk("super cash desk");
         session.save(cashPayment);
@@ -58,7 +58,7 @@ public class HibernateInheritanceJoined {
         cardPayment.setCardNumber("1234567890");
         session.save(cardPayment);
 
-        Criteria criteria = session.createCriteria(Payment.class);
+        Criteria criteria = session.createCriteria(Payment.class); // выберутся все наследники, три джойна
         List<Payment> payments = criteria.list();
 
         for (Payment pay: payments) {
@@ -67,7 +67,7 @@ public class HibernateInheritanceJoined {
 
         log.info("=========================================");
 
-        criteria = session.createCriteria(CashPayment.class);
+        criteria = session.createCriteria(CashPayment.class); // делает джой к Payment
         payments = criteria.list();
 
         for (Payment pay: payments) {

@@ -58,7 +58,7 @@ public class HibernateInheritanceTablePerClass {
         cardPayment.setCardNumber("1234567890");
         session.save(cardPayment);
 
-        Criteria criteria = session.createCriteria(Payment.class);
+        Criteria criteria = session.createCriteria(Payment.class); // будет union
         List<Payment> payments = criteria.list();
 
         for (Payment pay: payments) {

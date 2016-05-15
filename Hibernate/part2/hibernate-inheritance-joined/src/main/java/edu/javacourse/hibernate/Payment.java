@@ -3,8 +3,9 @@ package edu.javacourse.hibernate;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "jc_payment")
+@Table(name = "jc_payment") // таблица существует в бд
 @Inheritance(strategy = InheritanceType.JOINED)
+// указываем, что будет применяться наследование и указываем его тип
 public class Payment {
 
     @Id

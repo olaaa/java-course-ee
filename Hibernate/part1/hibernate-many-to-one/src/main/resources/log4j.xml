@@ -6,7 +6,7 @@
     <appender name="consoleLog" class="org.apache.log4j.ConsoleAppender">
         <param name="target" value="System.out"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%-5p %d{ISO8601} [%C{1}] - %m%n"/>
+            <param name="ConversionPattern" value="%-5p %d{ISO8601} [%C{1}] %M - %m%n"/>
         </layout>
     </appender>
 

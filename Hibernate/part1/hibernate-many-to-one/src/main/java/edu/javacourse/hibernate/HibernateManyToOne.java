@@ -43,16 +43,23 @@ public class HibernateManyToOne {
 //        testLazyInit(s);
 //
         log.debug("====================================================");
-//
-//        List<Region> regionList = s.createQuery("from Region").list();
-//
-//        for (Region r : regionList) {
-//            log.debug("Region name: {}", r);
-//            for (City c : r.getCityList()) {
-//                log.debug("     City name: {}", c);
-//            }
-//        }
-//
+
+        List<Region> regionList = s.createQuery("from Region").list();
+
+        for (Region r : regionList) {
+            log.debug("Region name: {}", r);
+//            SELECT citylist0_.region_id AS region_i3_1_0_,
+//              citylist0_.city_id AS city_id1_0_0_,
+//              citylist0_.city_id AS city_id1_0_1_,
+//              citylist0_.city_name AS city_nam2_0_1_,
+//              citylist0_.region_id AS region_i3_0_1_
+//              FROM public.jc_city citylist0_ WHERE citylist0_.region_id =?
+//            ORDER BY citylist0_.city_name
+            for (City c : r.getCityList()) { // подтягиваем список городов запросом выше
+                log.debug("     City name: {}", c);
+            }
+        } // без всяких прокси, списки связа
+
         Region spb = new Region("SPb-11");
         // если закомментировать s.save(spb);
         // и завершить выплнение мейн, то можно пронаблюдать работу каскад персист

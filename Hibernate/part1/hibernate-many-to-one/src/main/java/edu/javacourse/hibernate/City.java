@@ -15,6 +15,7 @@ public class City {
     private Integer cityId;
     @Column(name = "city_name")
     private String cityName;
+    // какие операции будут прокидываться на связанную сущность
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
 //    @Fetch(FetchMode.SUBSELECT)
     @JoinColumn(name = "region_id")

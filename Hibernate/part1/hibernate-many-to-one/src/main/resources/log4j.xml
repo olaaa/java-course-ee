@@ -23,7 +23,7 @@
     </category>
 
     <category name="org.hibernate.type">
-        <priority value="trace"/>
+        <priority value="all"/>
         <appender-ref ref="consoleLog"/>
     </category>
 

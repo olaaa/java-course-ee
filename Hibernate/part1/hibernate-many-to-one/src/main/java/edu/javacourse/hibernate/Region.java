@@ -14,6 +14,7 @@ public class Region implements Serializable {
     private Long regionId;
     @Column(name = "region_name", nullable = true)
     private String regionName;
+    // здесь регионы не знают о городах // плюс добавлена join-колонка
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "region")
     @OrderBy(value = "cityName")
     private List<City> cityList;

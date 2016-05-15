@@ -1,6 +1,7 @@
 package edu.javacourse.hibernate;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -38,10 +39,13 @@ public class HibernateManyToMany {
         init();
 
         Session s = sessionFactory.getCurrentSession();
+        clearAllTables(s);
+        s = sessionFactory.getCurrentSession();
+
         s.beginTransaction();
 
         Author oldAuthor = new Author();
-        oldAuthor.setAuthorName("New Author 0");
+        oldAuthor.setAuthorName("oldAuthor");
         s.save(oldAuthor);
 
         saveBook(oldAuthor, s);
@@ -51,7 +55,7 @@ public class HibernateManyToMany {
             log.debug("");
             log.debug("Book: {}", book);
             for (Author author : book.getAuthorList()) {
-                log.debug("Author: {}", author);
+                log.debug("Author: {}", author); // у автора список книг пуст
             }
         }
 
@@ -63,7 +67,9 @@ public class HibernateManyToMany {
 
         // Если не закрыть - то вылетает ошибка
         s.getTransaction().commit();
-
+// выполнилось четыре инсерта в общую таблицу
+//        insert into public.jc_book_author(book_id, author_id) values( ?,?)
+//        - создавалось две книги по два автора
         s = sessionFactory.getCurrentSession();
         s.beginTransaction();
 
@@ -72,7 +78,7 @@ public class HibernateManyToMany {
             log.debug("");
             log.debug("Book: {}", book);
             for (Author author : book.getAuthorList()) {
-                log.debug("Author: {}", author);
+                log.debug("Author: {}", author); // теперь у авторов видны списки книг
             }
         }
 
@@ -83,16 +89,33 @@ public class HibernateManyToMany {
         destroy();
     }
 
+    private static void clearAllTables(Session s) {
+        s.beginTransaction();
+
+        //        delete from public.jc_book_author where (book_id) in(select book_id from public.jc_book)
+//        delete from public.jc_book
+        String hql = "delete from Book ";
+        Query query = s.createQuery(hql);
+        query.executeUpdate();
+
+//        delete from public.jc_book_author where (author_id) in(select author_id from public.jc_author)
+//        delete from public.jc_author
+        String hqll = "delete from Author ";
+        Query deleteAuthor = s.createQuery(hqll);
+        deleteAuthor.executeUpdate();
+        s.getTransaction().commit();
+    }
+
     private static void saveBook(Author oldAuthor, Session s) throws HibernateException {
         Book newBook = new Book();
-        newBook.setBookName("New book 1");
+        newBook.setBookName("Java");
 
         // Вариант добавления новой книги и существуюего автора
         newBook.addAuthor(oldAuthor);
 
         // Вариант добавления нового автора к новой книге
         Author newAuthor = new Author();
-        newAuthor.setAuthorName("New Author 1");
+        newAuthor.setAuthorName("Bloch");
         // Нет надобности добавлять книгу к автору
         // Если связь однонаправленная - то не проблема. Иначе будет забавный эффект
         //newAuthor.addBook(newBook);

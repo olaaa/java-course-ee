@@ -9,6 +9,18 @@
 
     <url>http://maven.apache.org</url>
 
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>LATEST</version>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+			</configuration>
+		</plugin></plugins>
+</build>
 
     <dependencies>
 
@@ -18,6 +30,7 @@
             <artifactId>spring-context</artifactId>
             <version>3.1.4.RELEASE</version>
         </dependency>
+	    <!--spring-tx-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
@@ -29,6 +42,7 @@
             <artifactId>spring-jdbc</artifactId>
             <version>3.1.4.RELEASE</version>
         </dependency>
+	    <!--spring-orm хибернейтовские классы-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
@@ -47,35 +61,19 @@
             <version>3.5.6-Final</version>
         </dependency>
 
-        <!-- javassist is used for http://stackoverflow.com/questions/7297565/javassist-what-is-the-main-idea-and-where-real-use/7297838 -->
-        <dependency>
-            <groupId>javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.12.1.GA</version>
-        </dependency>
+	    <dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>LATEST</version>
+	    </dependency>
 
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.18</version>
-        </dependency>
+        <!--&lt;!&ndash; javassist is used for http://stackoverflow.com/questions/7297565/javassist-what-is-the-main-idea-and-where-real-use/7297838 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>javassist</groupId>-->
+            <!--<artifactId>javassist</artifactId>-->
+            <!--<version>3.12.1.GA</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>2.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjlib</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.7.3</version>
-        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>

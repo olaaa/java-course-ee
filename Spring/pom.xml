@@ -16,6 +16,7 @@
         <module>MVC</module>
         <module>Spring-JMS</module>
         <module>WS</module>
+        <module>GS_Spring_22_Hibernate</module>
     </modules>
 
 </project>

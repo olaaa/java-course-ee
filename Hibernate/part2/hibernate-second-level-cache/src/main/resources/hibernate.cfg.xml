@@ -4,22 +4,28 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-
+<!--настройка — что делать при коммите. по умолчанию сессия закрывается-->
     <session-factory>
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://127.0.0.1:5432/javacourse</property>
         <property name="connection.username">postgres</property>
-        <property name="connection.password">postgres</property>
+        <property name="connection.password">root</property>
         <property name="default_schema">region</property>
         <property name="connection.pool_size">1</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
         <property name="current_session_context_class">thread</property>
         <property name="hbm2ddl.auto">update</property>
-
+<!--<property name="transaction.auto_close_session">false</property>-->
+	    <!--основные настройки для slc-->
         <property name="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
         <property name="cache.use_second_level_cache">true</property>
+	    <!---->
+
+
         <property name="generate_statistics">true</property>
         <property name="cache.use_structured_entries">true</property>
+
+	    <!--query-cash(кэш запросов) по умолчанию не используется, включён в хибернейт-->
         <property name="cache.use_query_cache">true</property>
 
         <mapping class="edu.javacourse.hibernate.Region"/>

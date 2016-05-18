@@ -35,6 +35,8 @@ public class HibernateConfigXMLMappingAnnotations {
 
     private static void destroy() {
         StandardServiceRegistryBuilder.destroy(serviceRegistry);
+        // hibernate завершает свои потоки
+        // чтобы завершился main
     }
 
     public static void main(String[] args) {

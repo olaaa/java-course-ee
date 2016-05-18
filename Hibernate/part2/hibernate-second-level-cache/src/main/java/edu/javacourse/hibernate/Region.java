@@ -8,7 +8,13 @@ import java.io.Serializable;
 
 @Entity
 // Аннотация необходима для работы кжша. Отключать при отклюении кэша
+// region - регион кэширования
+//можно устанавливать время жизни
+//в зависимости от типа сущности можно выставить настройки
+// создаётся файл ehcache, в котором задаются настройки для регионов
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "CacheForRegion")
+// будет смотреть изменения в flc, устанвливается блокировка при обновлении
+// CacheConcurrencyStrategy.TRANSACTIONAL используется для кластера апп серверов, эхкэш не поддерживает
 @Table(name = "jc_region")
 public class Region implements Serializable {
 

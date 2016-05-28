@@ -1,0 +1,14 @@
+JNDI bindings for session bean named 'BookEJB'
+in deployment unit 'deployment "war-ejb.war"' are as follows:
+
+	java:global/war-ejb/BookEJB!edu.javacourse.BookEJBRemote
+	java:app/war-ejb/BookEJB!edu.javacourse.BookEJBRemote
+	java:module/BookEJB!edu.javacourse.BookEJBRemote
+	java:jboss/exported/war-ejb/BookEJB!edu.javacourse.BookEJBRemote
+
+	java:global/war-ejb/BookEJB!edu.javacourse.BookEJBLocal доступ из вне приложения
+	java:app/war-ejb/BookEJB!edu.javacourse.BookEJBLocal между модулями, т.е. внутри приложения
+	java:module/BookEJB!edu.javacourse.BookEJBLocal внутри одного модуля, т.е. варника
+
+	В случае с представлением без интерфейса
+	именем может быть полностью уточненное имя класса EJB-компонента.

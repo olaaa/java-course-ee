@@ -1,0 +1,7 @@
+	java:global/async-ejb-war/AsyncEJB!edu.javacourse.ejb.AsyncEJB
+	java:app/async-ejb-war/AsyncEJB!edu.javacourse.ejb.AsyncEJB
+	java:module/AsyncEJB!edu.javacourse.ejb.AsyncEJB
+
+	java:global/async-ejb-war/AsyncEJB
+	java:app/async-ejb-war/AsyncEJB
+	java:module/AsyncEJB

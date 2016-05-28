@@ -24,7 +24,7 @@ public class AsyncServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             if (answer == null) {
-                answer = bean.sayHello();
+                answer = bean.sayHello(); // СРАЗУ возвращается Future
             }
             out.println("<html>");
             out.println("<body>");
